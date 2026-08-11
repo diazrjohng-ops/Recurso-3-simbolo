@@ -1,0 +1,357 @@
+<div class="ciberraices-color-interactivo">
+
+  <style>
+    .ciberraices-color-interactivo {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 25px 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #444444;
+      box-sizing: border-box;
+    }
+
+    .ciberraices-color-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .ciberraices-color-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #e5dff0;
+      box-shadow: 0 4px 12px rgba(111, 63, 165, 0.08);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+      box-sizing: border-box;
+    }
+
+    .ciberraices-color-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(111, 63, 165, 0.14);
+    }
+
+    .ciberraices-color-card.active {
+      border-color: #6F3FA5;
+      box-shadow: 0 8px 22px rgba(111, 63, 165, 0.18);
+    }
+
+    .ciberraices-color-image-button {
+      width: 100%;
+      border: none;
+      background: #faf9fc;
+      padding: 8px;
+      border-radius: 12px;
+      cursor: pointer;
+      display: block;
+      box-sizing: border-box;
+    }
+
+    .ciberraices-color-image-button:focus {
+      outline: 3px solid rgba(243, 156, 18, 0.45);
+      outline-offset: 3px;
+    }
+
+    .ciberraices-color-image {
+      width: 100%;
+      height: 230px;
+      object-fit: contain;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .ciberraices-color-title {
+      margin: 15px 0 10px;
+      text-align: center;
+      color: #6F3FA5;
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .ciberraices-color-instruction {
+      text-align: center;
+      font-size: 14px;
+      color: #666666;
+      margin: 0 0 13px;
+    }
+
+    .ciberraices-color-info {
+      display: none;
+      padding: 15px 16px;
+      margin-top: 10px;
+      background: #F5F0FF;
+      border-left: 4px solid #6F3FA5;
+      border-radius: 0 10px 10px 0;
+      font-size: 15px;
+      line-height: 1.55;
+      animation: ciberraicesFade 0.25s ease;
+    }
+
+    .ciberraices-color-info.visible {
+      display: block;
+    }
+
+    .ciberraices-color-info strong {
+      color: #6F3FA5;
+    }
+
+    .ciberraices-color-close {
+      display: none;
+      margin: 10px auto 0;
+      padding: 7px 13px;
+      border: none;
+      border-radius: 8px;
+      background: #6F3FA5;
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .ciberraices-color-card.active .ciberraices-color-close {
+      display: block;
+    }
+
+    @keyframes ciberraicesFade {
+      from {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 850px) {
+      .ciberraices-color-grid {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+
+      .ciberraices-color-image {
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ciberraices-color-interactivo {
+        padding: 15px 10px;
+      }
+
+      .ciberraices-color-card {
+        padding: 12px;
+      }
+
+      .ciberraices-color-image {
+        height: 220px;
+      }
+
+      .ciberraices-color-title {
+        font-size: 18px;
+      }
+    }
+  </style>
+
+
+  <div class="ciberraices-color-grid">
+
+    <!-- ============================= -->
+    <!-- VERSIÓN 1: COLORES CÁLIDOS -->
+    <!-- ============================= -->
+
+    <article class="ciberraices-color-card">
+
+      <button
+        type="button"
+        class="ciberraices-color-image-button"
+        onclick="mostrarColor(this)"
+        aria-expanded="false"
+        aria-controls="info-calidos">
+
+        <!-- REEMPLAZAR ESTA RUTA POR LA IMAGEN DE COLORES CÁLIDOS -->
+        <img
+          class="ciberraices-color-image"
+          src="URL_IMAGEN_COLORES_CALIDOS"
+          alt="Símbolo gráfico cultural Wayúu en colores cálidos">
+      </button>
+
+      <h3 class="ciberraices-color-title">
+        Colores cálidos
+      </h3>
+
+      <p class="ciberraices-color-instruction">
+        Haz clic sobre la imagen para conocer su característica.
+      </p>
+
+      <div
+        id="info-calidos"
+        class="ciberraices-color-info"
+        role="region">
+
+        <strong>Colores cálidos:</strong>
+        Los colores cálidos aportan mayor intensidad y dinamismo a la apariencia del símbolo.
+      </div>
+
+      <button
+        type="button"
+        class="ciberraices-color-close"
+        onclick="cerrarColor(this)">
+        Ocultar
+      </button>
+
+    </article>
+
+
+    <!-- ============================= -->
+    <!-- VERSIÓN 2: COLORES FRÍOS -->
+    <!-- ============================= -->
+
+    <article class="ciberraices-color-card">
+
+      <button
+        type="button"
+        class="ciberraices-color-image-button"
+        onclick="mostrarColor(this)"
+        aria-expanded="false"
+        aria-controls="info-frios">
+
+        <!-- REEMPLAZAR ESTA RUTA POR LA IMAGEN DE COLORES FRÍOS -->
+        <img
+          class="ciberraices-color-image"
+          src="URL_IMAGEN_COLORES_FRIOS"
+          alt="Símbolo gráfico cultural Wayúu en colores fríos">
+      </button>
+
+      <h3 class="ciberraices-color-title">
+        Colores fríos
+      </h3>
+
+      <p class="ciberraices-color-instruction">
+        Haz clic sobre la imagen para conocer su característica.
+      </p>
+
+      <div
+        id="info-frios"
+        class="ciberraices-color-info"
+        role="region">
+
+        <strong>Colores fríos:</strong>
+        Los colores fríos generan una apariencia más serena y modifican la forma en que se percibe el mismo símbolo.
+      </div>
+
+      <button
+        type="button"
+        class="ciberraices-color-close"
+        onclick="cerrarColor(this)">
+        Ocultar
+      </button>
+
+    </article>
+
+
+    <!-- ================================== -->
+    <!-- VERSIÓN 3: COLORES CONTRASTANTES -->
+    <!-- ================================== -->
+
+    <article class="ciberraices-color-card">
+
+      <button
+        type="button"
+        class="ciberraices-color-image-button"
+        onclick="mostrarColor(this)"
+        aria-expanded="false"
+        aria-controls="info-contraste">
+
+        <!-- REEMPLAZAR ESTA RUTA POR LA IMAGEN DE COLORES CONTRASTANTES -->
+        <img
+          class="ciberraices-color-image"
+          src="URL_IMAGEN_COLORES_CONTRASTANTES"
+          alt="Símbolo gráfico cultural Wayúu con colores contrastantes">
+      </button>
+
+      <h3 class="ciberraices-color-title">
+        Colores contrastantes
+      </h3>
+
+      <p class="ciberraices-color-instruction">
+        Haz clic sobre la imagen para conocer su característica.
+      </p>
+
+      <div
+        id="info-contraste"
+        class="ciberraices-color-info"
+        role="region">
+
+        <strong>Colores contrastantes:</strong>
+        El contraste entre los colores permite destacar las formas y establecer diferencias visuales dentro del símbolo.
+      </div>
+
+      <button
+        type="button"
+        class="ciberraices-color-close"
+        onclick="cerrarColor(this)">
+        Ocultar
+      </button>
+
+    </article>
+
+  </div>
+
+
+  <script>
+    function mostrarColor(boton) {
+
+      const tarjeta = boton.closest('.ciberraices-color-card');
+      const informacion = tarjeta.querySelector('.ciberraices-color-info');
+
+      const estaVisible = informacion.classList.contains('visible');
+
+      // Cerrar todas las tarjetas antes de abrir la seleccionada
+      document
+        .querySelectorAll('.ciberraices-color-card')
+        .forEach(function(card) {
+
+          card.classList.remove('active');
+
+          const info = card.querySelector('.ciberraices-color-info');
+          const button = card.querySelector('.ciberraices-color-image-button');
+
+          info.classList.remove('visible');
+
+          if (button) {
+            button.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+      // Si estaba cerrada, abrirla
+      if (!estaVisible) {
+
+        tarjeta.classList.add('active');
+        informacion.classList.add('visible');
+
+        boton.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+
+    function cerrarColor(boton) {
+
+      const tarjeta = boton.closest('.ciberraices-color-card');
+      const informacion = tarjeta.querySelector('.ciberraices-color-info');
+      const imagenBoton = tarjeta.querySelector('.ciberraices-color-image-button');
+
+      tarjeta.classList.remove('active');
+      informacion.classList.remove('visible');
+
+      if (imagenBoton) {
+        imagenBoton.setAttribute('aria-expanded', 'false');
+      }
+    }
+  </script>
+
+</div>
