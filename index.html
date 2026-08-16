@@ -99,24 +99,6 @@ body {
   color:#666; font-size:22px; cursor:pointer;
 }
 
-.recuerda {
-  margin-top:18px; background:var(--tarjeta); border:2px dashed rgba(111,63,165,.55);
-  border-radius:16px; overflow:hidden;
-}
-.recuerda button {
-  width:100%; border:0; background:transparent; padding:18px 22px;
-  display:flex; align-items:center; gap:15px; cursor:pointer; text-align:left;
-  color:var(--morado-oscuro); font-size:18px;
-}
-.recuerda button:hover { background:rgba(111,63,165,.06); }
-.icono {
-  width:43px; height:43px; flex:0 0 43px; border-radius:50%;
-  background:var(--morado); color:#fff; display:flex; align-items:center;
-  justify-content:center; font-size:22px;
-}
-.recuerda-contenido { display:none; padding:0 25px 22px 80px; }
-.recuerda.abierto .recuerda-contenido { display:block; }
-
 .cierre {
   display:none; margin-top:22px; padding:25px; background:var(--reflexion);
   border-radius:18px; border:2px solid rgba(243,156,18,.5);
@@ -179,19 +161,7 @@ textarea {
     </div>
   </div>
 
-  <div class="recuerda" id="recuerda">
-    <button id="recuerdaBtn" aria-expanded="false">
-      <span class="icono">⌕</span>
-      <span><strong>Recuerda</strong><br>
-      Las formas y las líneas no están allí por casualidad.</span>
-    </button>
-    <div class="recuerda-contenido">
-      <p>Su combinación transmite ideas, expresa identidad y cuenta historias desde la cultura Wayúu.</p>
-      <p><strong>Ahora vuelve a tu dibujo del símbolo y analiza cómo estas formas y líneas se relacionan entre sí.</strong></p>
-    </div>
-  </div>
-
-  <div class="cierre" id="cierre">
+    <div class="cierre" id="cierre">
     <h3>Ahora interpreta lo que observaste</h3>
     <p class="pregunta">¿Qué relaciones encuentras entre las formas y las líneas del símbolo gráfico cultural Wayúu?</p>
     <div class="opciones">
@@ -236,12 +206,7 @@ textarea {
     info.classList.remove("a1","a2","a3","a4");
   };
 
-  const rec=document.getElementById("recuerda");
-  document.getElementById("recuerdaBtn").onclick=()=>{
-    rec.classList.toggle("abierto");
-    document.getElementById("recuerdaBtn").setAttribute("aria-expanded",rec.classList.contains("abierto"));
-  };
-
+  
   document.querySelectorAll(".opcion").forEach(b=>b.onclick=()=>b.classList.toggle("seleccionada"));
   const r=document.getElementById("respuesta"), c=document.getElementById("caracteres");
   r.oninput=()=>c.textContent=r.value.length;
